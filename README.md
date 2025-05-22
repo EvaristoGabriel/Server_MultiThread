@@ -72,3 +72,30 @@ Grupo:
     - As 10 threads são criadas sob demanda (não previamente alocadas).
 
     - O contador clientes_ativos garante que nunca exceda o limite definido.
+
+# Estrutura do Código do Cliente
+- Função main()
+
+    - Responsabilidade: Conectar ao servidor e enviar/receber mensagens.
+
+    - Fluxo:
+
+        Cria um socket TCP e conecta ao servidor.
+
+        Permite ao usuário digitar mensagens para enviar ao servidor.
+
+        Se o servidor fechar a conexão ou ocorrer um erro, o cliente é encerrado.
+
+- Tratamento de Erros no Cliente
+    - Caso Servidor Cheio:
+
+        O cliente captura ConnectionRefusedError e exibe a mensagem "[ERRO] Servidor cheio ou não disponível.".
+
+    - Conexão Encerrada pelo Servidor:
+
+        Se o servidor fechar a conexão durante a comunicação, o cliente exibe "[ERRO] Conexão encerrada pelo servidor".
+
+# Para executar o código
+foi executado utilizando: python3 server_a.py ou python3 server_b.py
+
+e em outros terminais foi utilizado: python3 cliente.py.
